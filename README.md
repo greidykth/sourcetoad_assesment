@@ -10,4 +10,4 @@ Clone the repository
 Open the terminal
 
 ## Step 3: 
-### Run php ./main.php
+Run php ./main.php
