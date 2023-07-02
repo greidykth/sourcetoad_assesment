@@ -151,8 +151,8 @@ printOut($newItem->get_item());
 $newCart = new Cart($newCustomer);
 $newCart->set_item($newItem);
 $newCart->set_item($newItem2);
-echo '----------- Cart -----------' . "\n";
-printOut($newCart->get_cart());
 
 // Cost of item in cart, including shipping and tax
 // Subtotal and total for all items
+echo '----------- Cart -----------' . "\n";
+printOut($newCart->get_cart());
