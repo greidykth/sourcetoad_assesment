@@ -2,6 +2,7 @@
 
 require 'question1.php';
 require 'question2.php';
+require 'question3.php';
 
 $data =
 [
@@ -128,3 +129,30 @@ echo '----------- Question 2 -----------' . "\n";
 sortData($data, ["last_name", "account_id"], count($data));
 printOut($data); // Question 2
 
+echo '----------- Question 3 -----------' . "\n";
+// Customer Name
+$newCustomer = new Customer();
+echo '----------- Customer -----------' . "\n";
+printOut($newCustomer->get_customer());
+
+// Customer Addresses
+echo '----------- Customer Addresses -----------' . "\n";
+$customerNewAddress = new Address();
+$newCustomer->set_address($customerNewAddress);
+printOut($newCustomer->get_customer());
+
+// Items in Cart
+// Where Order Ships
+$newItem = new Item(1, "toy", 1, 10000);
+$newItem2 = new Item(2, "car", 2, 20000);
+echo '----------- Item -----------' . "\n";
+printOut($newItem->get_item());
+
+$newCart = new Cart($newCustomer);
+$newCart->set_item($newItem);
+$newCart->set_item($newItem2);
+echo '----------- Cart -----------' . "\n";
+printOut($newCart->get_cart());
+
+// Cost of item in cart, including shipping and tax
+// Subtotal and total for all items
